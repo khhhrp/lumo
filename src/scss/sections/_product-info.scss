@@ -1,0 +1,74 @@
+@use "../base/variables";
+@use "../base/typography";
+
+.product-info {
+  &__card {
+    padding: 23px 30px;
+    border-radius: 40px;
+    box-shadow: 0 4px 16px rgba(variables.$gray--dark, 0.16);
+    display: flex;
+    flex-direction: column;
+    row-gap: 17px;
+  }
+
+  &__card-image {
+    position: relative;
+    margin-bottom: 8px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 83px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background-color: variables.$blue;
+      z-index: -1;
+      top: 50%;
+      left: -16px;
+      translate: 0 -50%;
+    }
+
+    img {
+      max-width: 100px;
+      height: auto;
+    }
+  }
+
+  &__card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: variables.$gray--dark;
+  }
+
+  &__card-subtitle {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: variables.$gray--light;
+    padding-bottom: 9px;
+    text-transform: uppercase;
+  }
+
+  &__card-text {
+    font-size: 14px;
+    line-height: 1.4285;
+    padding-bottom: 14px;
+  }
+
+  &__card-link {
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: variables.$blue;
+    width: 57px;
+    aspect-ratio: 1;
+    box-shadow: 0 4px 9px rgba(variables.$gray--dark, 0.23);
+
+    @media (hover: hover) {
+      cursor: pointer;
+    }
+  }
+}

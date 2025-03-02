@@ -1,0 +1,102 @@
+@use "../base/variables";
+
+.header {
+  $root: &;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 20px;
+
+  @media (width >= 768px) {
+    padding-top: 54px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+
+    @media (width >= 1024px) {
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    margin-right: auto;
+    flex-shrink: 0;
+
+    @media (width >= 768px) {
+      max-width: 184px;
+    }
+
+    @media (width >= 1024px) {
+      margin-right: 0;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 64px;
+    background-color: variables.$blue;
+    padding: 126px 38px 30px;
+    overflow-y: auto;
+    translate: 100%;
+    opacity: 0;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    transition-property: translate, opacity;
+    transition-duration: 250ms;
+    transition-timing-function: ease;
+    z-index: 50;
+
+    &--active {
+      translate: 0;
+      opacity: 1;
+
+      #{$root} {
+        &__btn {
+          margin-top: 25px;
+          max-width: 310px;
+          height: 60px;
+          border-radius: 30px;
+          display: flex;
+
+          svg {
+            width: 35px;
+          }
+        }
+      }
+    }
+
+    @media (width >= 768px) {
+      border-top-left-radius: 60px;
+      border-bottom-left-radius: 60px;
+    }
+
+    @media (width >= 1024px) {
+      display: contents;
+
+      #{$root} {
+        &__btn {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    display: none;
+
+    @media (width >= 768px) {
+      display: flex;
+    }
+
+    @media (width >= 1024px) {
+      order: 1;
+    }
+  }
+}

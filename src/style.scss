@@ -1,3 +1,16 @@
-@use "./scss/custom-reset";
-@use "./scss/variables";
-@use "./scss/general";
+@use "./scss/base/custom-reset";
+@use "./scss/base/variables";
+@use "./scss/base/typography";
+@use "./scss/base/general";
+
+
+@use "./scss/components/logo";
+@use "./scss/components/burger-btn";
+@use "./scss/components/main-btn";
+@use "./scss/components/nav";
+
+
+@use "./scss/sections/header";
+@use "./scss/sections/hero";
+@use "./scss/sections/intro";
+@use "./scss/sections/product-info";

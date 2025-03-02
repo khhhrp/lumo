@@ -1,0 +1,145 @@
+@use "../base/variables";
+@use "../base/typography";
+
+.hero {
+  @media (width >= 1024px) {
+    background-image: linear-gradient(to right, #fff 50%, variables.$blue 0);
+  }
+
+  &__inner {
+    @media (width >= 768px) {
+      display: flex;
+      align-items: center;
+    }
+
+    @media (width >= 1024px) {
+      column-gap: 86px;
+      max-width: 1440px;
+      margin-inline: auto;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 27px;
+    text-align: center;
+    align-items: center;
+    padding-top: 128px;
+    padding-inline: 20px;
+
+    @media (width >=768px) {
+      padding-left: 60px;
+      padding-right: 0;
+      flex-grow: 1;
+    }
+
+    @media (width >= 1024px) {
+      text-align: start;
+      align-items: flex-start;
+    }
+  }
+
+  &__subtitle {
+    @extend %text-ls;
+
+    @media (width >=768px) {
+      display: none;
+    }
+
+    @media (width >= 1024px) {
+      display: block;
+    }
+  }
+
+  &__title {
+    @extend %title;
+    font-size: 30px;
+    padding-bottom: 5px;
+    line-height: 1.2;
+
+    span {
+      color: variables.$blue;
+    }
+
+    @media (width >=768px) {
+      padding-bottom: 0;
+      font-size: 46px;
+    }
+
+    @media (width >= 1024px) {
+      padding-bottom: 27px;
+    }
+  }
+
+  &__desc {
+    font-size: 20px;
+    color: variables.$gray--dark;
+    padding-bottom: 20px;
+    line-height: 1.2;
+
+    @media (width >=768px) {
+      display: none;
+    }
+
+    @media (width >= 1024px) {
+      display: block;
+      padding-bottom: 45px;
+    }
+  }
+
+  &__btn {
+    max-width: 277px;
+    margin-bottom: 10px;
+    font-size: 12px;
+
+    @media (width >=768px) {
+      display: none;
+    }
+
+    @media (width >= 1024px) {
+      display: flex;
+      margin-bottom: 27px;
+    }
+  }
+
+  &__text {
+    @extend %text-ls;
+    font-size: 10px;
+    color: variables.$blue;
+
+    @media (width >=768px) {
+      display: none;
+    }
+
+    @media (width >= 1024px) {
+      display: block;
+    }
+  }
+
+  &__picture {
+    display: none;
+
+    @media (width >= 768px) {
+      display: block;
+      max-width: 527px;
+      background-color: variables.$blue;
+      padding-top: 128px;
+      border-top-left-radius: 60px;
+      border-bottom-left-radius: 60px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    @media (width >= 1024px) {
+      max-width: 710px;
+      padding-right: 60px;
+      border-radius: 0;
+      padding-left: 62px;
+      padding-top: 145px;
+    }
+  }
+}

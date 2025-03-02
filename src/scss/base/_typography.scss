@@ -1,0 +1,19 @@
+%title-large {
+  font-size: 64px;
+  font-weight: 900;
+}
+
+%title {
+  font-size: 32px;
+  font-weight: 900;
+
+  @media (width >= 768px) {
+    font-size: 46px;
+  }
+}
+
+%text-ls {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.33em;
+}

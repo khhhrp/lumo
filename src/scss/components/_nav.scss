@@ -1,0 +1,30 @@
+@use "../base/variables";
+
+.nav {
+  display: contents;
+
+  @media (width >= 1024px) {
+    display: flex;
+    align-items: center;
+    column-gap: 55px;
+    overflow-x: auto;
+  }
+
+  &__link {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.23em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: variables.$gray--dark;
+
+    @media (width >= 768px) {
+      font-size: 20px;
+    }
+
+    @media (width >= 1024px) {
+      font-size: 14px;
+      white-space: nowrap;
+    }
+  }
+}
