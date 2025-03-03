@@ -1,10 +1,10 @@
-@use "../base/variables";
+@use "../base/variables" as v;
 @use "../base/typography";
 
 .intro {
   padding-top: 63px;
   padding-bottom: 39px;
-  background-color: variables.$gray--very-light;
+  background-color: v.$gray-100;
 
   @media (width >= 768px) {
     padding-top: 71px;
@@ -52,7 +52,7 @@
 
   &__title {
     @extend %title;
-    color: variables.$gray--dark;
+    color: v.$gray-700;
   }
 
   &__text {

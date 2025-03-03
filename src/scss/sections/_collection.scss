@@ -1,0 +1,102 @@
+@use "../base/variables" as v;
+@use "../base/typography";
+
+.collection {
+  $root: &;
+  padding-bottom: 30px;
+
+  &__title {
+    @extend %title;
+    text-transform: uppercase;
+    color: v.$gray-700;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  &__card {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    border-radius: 40px;
+    box-shadow: 0 4px 16px rgba(v.$gray-700, 0.23);
+    max-width: 768px;
+
+    &--reverse {
+      grid-template-columns: 45% 55%;
+
+      #{$root} {
+        &__card-image {
+          order: -1;
+        }
+      }
+    }
+  }
+
+  &__card-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    padding: 14px 22px;
+    color: v.$gray-400;
+
+    svg {
+      @media (width >= 500px) {
+        width: 64px;
+      }
+
+      @media (width >= 768px) {
+        width: 98px;
+      }
+    }
+
+    @media (width >= 500px) {
+      padding: 27px 43px;
+    }
+  }
+
+  &__card-subtitle {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    padding-top: 8px;
+  }
+
+  &__card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: v.$gray-700;
+    padding-bottom: 4px;
+
+    @media (width >= 500px) {
+      font-size: 32px;
+      padding-bottom: 14px;
+    }
+  }
+
+  &__card-link {
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: v.$gray-700;
+    background-color: v.$primary;
+    width: 30px;
+    aspect-ratio: 1;
+
+    @media (hover: hover) {
+      cursor: pointer;
+    }
+
+    @media (width >= 500px) {
+      width: 44px;
+    }
+  }
+
+  &__card-image {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+  }
+}

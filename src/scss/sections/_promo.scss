@@ -1,0 +1,81 @@
+@use "../base/variables" as v;
+@use "../base/typography";
+
+.promo {
+  padding-bottom: 40px;
+
+  @media (width >= 768px) {
+    padding-bottom: 68px;
+  }
+
+  @media (width >= 1024px) {
+    padding-bottom: 94px;
+  }
+
+  &__inner {
+    position: relative;
+    background-color: v.$gray-700;
+    border-radius: 40px;
+    color: v.$white;
+    padding: 54px 24px;
+    box-shadow: 0 4px 16px rgba(v.$gray-700, 0.36);
+
+    @media (width >= 1024px) {
+      padding-left: 50%;
+      display: flex;
+      align-items: center;
+      min-height: 471px;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @media (width >= 1024px) {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 41.3636%;
+      height: auto;
+      left: -50px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 33px;
+    align-items: center;
+    text-align: center;
+
+    @media (width >= 1024px) {
+      max-width: 505px;
+      align-items: start;
+      text-align: left;
+    }
+  }
+
+  &__subtitle {
+    @extend %text-ls;
+    text-transform: uppercase;
+    line-height: 1.2;
+    padding-bottom: 3px;
+
+    @media (width >= 768px) {
+      padding-bottom: 10px;
+    }
+  }
+
+  &__title {
+    @extend %title;
+
+    span {
+      color: v.$primary;
+      font-size: 36px;
+
+      @media (width >= 768px) {
+        font-size: 64px;
+      }
+    }
+  }
+}

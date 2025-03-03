@@ -1,4 +1,4 @@
-@use "../base/variables";
+@use "../base/variables" as v;
 
 .header {
   $root: &;
@@ -41,7 +41,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 64px;
-    background-color: variables.$blue;
+    background-color: v.$primary;
     padding: 126px 38px 30px;
     overflow-y: auto;
     translate: 100%;

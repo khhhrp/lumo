@@ -1,11 +1,37 @@
-@use "../base/variables";
+@use "../base/variables" as v;
 @use "../base/typography";
 
 .product-info {
+  padding-bottom: 47px;
+
+  @media (width >= 768px) {
+    padding-bottom: 52px;
+  }
+
+  @media (width >= 1024px) {
+    padding-bottom: 190px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+
+    @media (width >= 768px) {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 20px;
+      row-gap: 28px;
+    }
+
+    @media (width >= 1200px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
   &__card {
-    padding: 23px 30px;
+    padding: 24px 30px 34px 30px;
     border-radius: 40px;
-    box-shadow: 0 4px 16px rgba(variables.$gray--dark, 0.16);
+    box-shadow: 0 4px 16px rgba(v.$gray-700, 0.16);
     display: flex;
     flex-direction: column;
     row-gap: 17px;
@@ -14,6 +40,7 @@
   &__card-image {
     position: relative;
     margin-bottom: 8px;
+    color: v.$gray-700;
 
     &::before {
       content: "";
@@ -21,7 +48,7 @@
       width: 83px;
       aspect-ratio: 1;
       border-radius: 50%;
-      background-color: variables.$blue;
+      background-color: v.$primary;
       z-index: -1;
       top: 50%;
       left: -16px;
@@ -37,14 +64,14 @@
   &__card-title {
     font-size: 20px;
     font-weight: 700;
-    color: variables.$gray--dark;
+    color: v.$gray-700;
   }
 
   &__card-subtitle {
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.16em;
-    color: variables.$gray--light;
+    color: v.$gray-400;
     padding-bottom: 9px;
     text-transform: uppercase;
   }
@@ -56,16 +83,17 @@
   }
 
   &__card-link {
+    margin-top: auto;
     border: none;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background-color: variables.$blue;
+    background-color: v.$primary;
     width: 57px;
     aspect-ratio: 1;
-    box-shadow: 0 4px 9px rgba(variables.$gray--dark, 0.23);
+    box-shadow: 0 4px 9px rgba(v.$gray-700, 0.23);
 
     @media (hover: hover) {
       cursor: pointer;

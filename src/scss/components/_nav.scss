@@ -1,4 +1,4 @@
-@use "../base/variables";
+@use "../base/variables" as v;
 
 .nav {
   display: contents;
@@ -16,7 +16,7 @@
     letter-spacing: 0.23em;
     line-height: 1.2;
     text-transform: uppercase;
-    color: variables.$gray--dark;
+    color: v.$gray-700;
 
     @media (width >= 768px) {
       font-size: 20px;

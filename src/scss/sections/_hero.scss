@@ -1,9 +1,9 @@
-@use "../base/variables";
+@use "../base/variables" as v;
 @use "../base/typography";
 
 .hero {
   @media (width >= 1024px) {
-    background-image: linear-gradient(to right, #fff 50%, variables.$blue 0);
+    background-image: linear-gradient(to right, #fff 50%, v.$primary 0);
   }
 
   &__inner {
@@ -59,7 +59,7 @@
     line-height: 1.2;
 
     span {
-      color: variables.$blue;
+      color: v.$primary;
     }
 
     @media (width >=768px) {
@@ -74,7 +74,7 @@
 
   &__desc {
     font-size: 20px;
-    color: variables.$gray--dark;
+    color: v.$gray-700;
     padding-bottom: 20px;
     line-height: 1.2;
 
@@ -106,7 +106,7 @@
   &__text {
     @extend %text-ls;
     font-size: 10px;
-    color: variables.$blue;
+    color: v.$primary;
 
     @media (width >=768px) {
       display: none;
@@ -123,7 +123,7 @@
     @media (width >= 768px) {
       display: block;
       max-width: 527px;
-      background-color: variables.$blue;
+      background-color: v.$primary;
       padding-top: 128px;
       border-top-left-radius: 60px;
       border-bottom-left-radius: 60px;

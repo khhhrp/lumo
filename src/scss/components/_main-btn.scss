@@ -1,4 +1,4 @@
-@use "../base/variables";
+@use "../base/variables" as v;
 
 .main-btn {
   display: flex;
@@ -13,9 +13,9 @@
   font-weight: 700;
   text-transform: uppercase;
   border: none;
-  color: variables.$light;
-  background-color: variables.$gray--dark;
-  box-shadow: 0 4px 16px rgba(variables.$gray--dark, 0.36);
+  color: v.$white;
+  background-color: v.$gray-700;
+  box-shadow: 0 4px 16px rgba(v.$gray-700, 0.36);
 
   span {
     flex-grow: 1;
@@ -24,5 +24,9 @@
 
   @media (hover: hover) {
     cursor: pointer;
+  }
+
+  &--light {
+    background-color: v.$primary;
   }
 }
