@@ -5,25 +5,64 @@
   $root: &;
   padding-bottom: 30px;
 
+  @media (width >= 768px) {
+    padding-bottom: 44px;
+  }
+
+  @media (width >= 1024px) {
+    padding-bottom: 74px;
+  }
+
   &__title {
     @extend %title;
     text-transform: uppercase;
     color: v.$gray-700;
     text-align: center;
     padding-bottom: 20px;
+
+    @media (width >= 768px) {
+      padding-bottom: 50px;
+    }
+
+    @media (width >= 1024px) {
+      padding-bottom: 76px;
+      text-align: left;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+
+    @media (width >= 768px) {
+      row-gap: 43px;
+    }
+
+    @media (width >= 1024px) {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 20px;
+      row-gap: 32px;
+    }
   }
 
   &__card {
     display: grid;
-    grid-template-columns: 55% 45%;
+    grid-template-columns: 1fr 1fr;
     border-radius: 40px;
     box-shadow: 0 4px 16px rgba(v.$gray-700, 0.23);
-    max-width: 768px;
+    column-gap: 20px;
 
     &--reverse {
-      grid-template-columns: 45% 55%;
-
       #{$root} {
+        &__card-content {
+          padding: 14px 22px 14px 15px;
+
+          @media (width >= 500px) {
+            padding: 27px 43px 27px 22px;
+          }
+        }
+
         &__card-image {
           order: -1;
         }
@@ -35,7 +74,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 8px;
-    padding: 14px 22px;
+    padding: 14px 15px 14px 22px;
     color: v.$gray-400;
 
     svg {
@@ -49,7 +88,7 @@
     }
 
     @media (width >= 500px) {
-      padding: 27px 43px;
+      padding: 27px 22px 27px 43px;
     }
   }
 
@@ -98,5 +137,22 @@
     height: 100%;
     border-radius: inherit;
     object-fit: cover;
+  }
+
+  &__photo-card {
+    display: none;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 40px;
+    }
+
+    @media (width >= 768px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 20px;
+    }
   }
 }
