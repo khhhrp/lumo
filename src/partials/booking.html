@@ -1,5 +1,60 @@
 <section class="booking">
   <div class="main-container">
-
+    <div class="booking__inner">
+      <div class="booking__header">
+        <h4 class="booking__subtitle">JOIN THIS YEAR’S WINTER FEST SHOW</h4>
+        <h2 class="booking__title">BOOK A SPOT</h2>
+        <img src="./src/img/vector-back.svg" alt="" class="booking__image" />
+      </div>
+      <form class="booking__form">
+        <div class="booking__form-row">
+          <label class="booking__wrapper">
+            <span class="booking__input-label">FULL NAME</span>
+            <input
+              type="text"
+              class="booking__input"
+              placeholder="Eg. Jane Doe"
+            />
+          </label>
+          <label class="booking__wrapper">
+            <span class="booking__input-label">EMAIL ADDRESS</span>
+            <input
+              type="email"
+              class="booking__input"
+              placeholder="Eg. janedoe@gmail.com"
+            />
+          </label>
+        </div>
+        <label class="booking__wrapper">
+          <span class="booking__input-label"
+            >WHERE DID YOU HEAR ABOUT THE LUMO WINTER FEST?</span
+          >
+          <input type="text" class="booking__input" placeholder="Eg. Youtube" />
+        </label>
+        <label class="booking__wrapper">
+          <span class="booking__input-label"
+            >if you’RE AN INFLUENCER, PLEASE SHARE YOUR YOUTUBE OR TIKTOK
+            URL</span
+          >
+          <input
+            type="text"
+            class="booking__input"
+            placeholder="Eg. https://www.youtube.com/dressign"
+          />
+        </label>
+        <label class="booking__wrapper">
+          <span class="booking__input-label"
+            >WHAT DO YOU LIKE TO SEE IN THE WINTER FEST?</span
+          >
+          <input type="text" class="booking__input" placeholder="Eg. Coats" />
+        </label>
+        <button type="submit" class="booking__btn main-btn main-btn--light">
+          <svg class="icon icon--24">
+            <use href="#arrow-small-right"></use>
+          </svg>
+          <span>OPT-IN</span>
+        </button>
+      </form>
+    </div>
   </div>
 </section>
