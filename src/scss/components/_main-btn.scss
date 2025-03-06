@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../base/variables" as v;
 
 .main-btn {
@@ -8,7 +9,7 @@
   border-radius: 25px;
   align-items: center;
   white-space: nowrap;
-  padding: 13px;
+  padding: 13px 27px 13px 13px;
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
@@ -16,17 +17,34 @@
   color: v.$white;
   background-color: v.$gray-700;
   box-shadow: 0 4px 16px rgba(v.$gray-700, 0.36);
+  transition-property: translate, background-color;
+  transition-duration: 150ms, 250ms;
+  transition-timing-function: ease;
 
   span {
-    flex-grow: 1;
     text-align: center;
+    margin-inline: auto;
+  }
+
+  &:active {
+    translate: 0 4px;
   }
 
   @media (hover: hover) {
     cursor: pointer;
+
+    &:hover {
+      background-color: color.scale(v.$gray-700, $lightness: -20%);
+    }
   }
 
   &--light {
     background-color: v.$primary;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: color.scale(v.$primary, $lightness: -20%);
+      }
+    }
   }
 }

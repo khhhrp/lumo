@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../base/variables" as v;
 @use "../base/typography";
 
@@ -122,9 +123,21 @@
     background-color: v.$primary;
     width: 30px;
     aspect-ratio: 1;
+    transition-property: translate, background-color, color;
+    transition-duration: 150ms, 250ms, 250ms;
+    transition-timing-function: ease;
+
+    &:active {
+      translate: 0 4px;
+    }
 
     @media (hover: hover) {
       cursor: pointer;
+
+      &:hover {
+        background-color: color.scale(v.$primary, $lightness: -20%);
+        color: v.$white;
+      }
     }
 
     @media (width >= 500px) {

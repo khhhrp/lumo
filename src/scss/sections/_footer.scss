@@ -1,19 +1,119 @@
+@use "sass:color";
 @use "../base/variables" as v;
 @use "../base/typography";
 
-
 .footer {
   padding-bottom: 25px;
+
+  @media (width >= 768px) {
+    padding-bottom: 40px;
+  }
+
+  @media (width >= 1024px) {
+    padding-bottom: 54px;
+  }
 
   &__inner {
     display: flex;
     flex-direction: column;
     row-gap: 38px;
     align-items: center;
+    max-width: 880px;
+    margin-inline: auto;
+
+    @media (width >= 768px) {
+      row-gap: 50px;
+    }
   }
 
   &__logo {
     max-width: 266px;
     width: 100%;
+  }
+
+  &__nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    text-align: center;
+    row-gap: 18px;
+
+    @media (width >= 768px) {
+      display: flex;
+      column-gap: 57px;
+      padding-bottom: 8px;
+    }
+  }
+
+  &__nav-link {
+    position: relative;
+    text-transform: uppercase;
+    color: v.$gray-700;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    overflow-x: hidden;
+    padding-bottom: 3px;
+    transition: color 250ms ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background-color: v.$gray-700;
+      translate: -100%;
+      transition-property: translate;
+      transition-duration: 350ms;
+      transition-timing-function: ease;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: color.scale(v.$gray-700, $lightness: -20%);
+
+        &::before {
+          translate: 0;
+        }
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+  }
+
+  &__social-link {
+    color: v.$primary;
+    transition-property: translate, color;
+    transition-duration: 150ms, 250ms;
+    transition-timing-function: ease;
+
+    &:active {
+      translate: 0 4px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: color.scale(v.$primary, $lightness: -20%);
+      }
+    }
+  }
+
+  &__text {
+    @extend %text-ls;
+    font-size: 14px;
+    padding-top: 22px;
+    border-top: 1px solid v.$gray-700;
+    text-align: center;
+    line-height: 1.2;
+
+    @media (width >= 768px) {
+      padding-top: 48px;
+    }
   }
 }
