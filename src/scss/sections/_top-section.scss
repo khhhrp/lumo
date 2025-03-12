@@ -1,0 +1,28 @@
+@use "../base/variables" as v;
+
+.top-section {
+  position: relative;
+
+  @media (width >= 768px) {
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: v.$primary;
+      max-width: 527px;
+      margin-left: auto;
+      border-top-left-radius: 60px;
+      border-bottom-left-radius: 60px;
+      z-index: -1;
+    }
+  }
+
+  @media (width >= 1024px) {
+    &::before {
+      max-width: 100%;
+      width: 50%;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+  }
+}

@@ -2,14 +2,11 @@
 @use "../base/typography";
 
 .hero {
-  @media (width >= 1024px) {
-    background-image: linear-gradient(to right, #fff 50%, v.$primary 0);
-  }
-
   &__inner {
     @media (width >= 768px) {
       display: flex;
       align-items: center;
+      justify-content: space-between;
     }
 
     @media (width >= 1024px) {
@@ -29,14 +26,17 @@
     padding-inline: 20px;
 
     @media (width >=768px) {
-      padding-left: 60px;
       padding-right: 0;
+      padding-left: 60px;
       flex-grow: 1;
+      align-items: flex-end;
+      padding-top: 0;
     }
 
     @media (width >= 1024px) {
       text-align: start;
       align-items: flex-start;
+      max-width: 584px;
     }
   }
 
@@ -65,10 +65,19 @@
     @media (width >=768px) {
       padding-bottom: 0;
       font-size: 46px;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(-180deg);
+      max-height: 584px;
+      padding-left: 30px;
+      text-align: left;
     }
 
     @media (width >= 1024px) {
       padding-bottom: 27px;
+      writing-mode: horizontal-tb;
+      transform: rotate(0);
+      padding-left: 0;
     }
   }
 
@@ -123,10 +132,7 @@
     @media (width >= 768px) {
       display: block;
       max-width: 527px;
-      background-color: v.$primary;
       padding-top: 128px;
-      border-top-left-radius: 60px;
-      border-bottom-left-radius: 60px;
 
       img {
         width: 100%;
@@ -135,10 +141,7 @@
     }
 
     @media (width >= 1024px) {
-      max-width: 710px;
-      padding-right: 60px;
-      border-radius: 0;
-      padding-left: 62px;
+      max-width: 588px;
       padding-top: 145px;
     }
   }
